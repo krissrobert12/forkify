@@ -1,0 +1,22 @@
+{
+  "name": "starter",
+  "version": "1.0.0",
+  "description": "Javascript Course final project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krissrobert12/forkify.git"
+  },
+  "author": "Kriss Gardner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krissrobert12/forkify/issues"
+  },
+  "homepage": "https://github.com/krissrobert12/forkify#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0"
+  }
+}
