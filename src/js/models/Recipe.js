@@ -97,7 +97,6 @@ export default class Recipe {
     updateServings(type) {
         //Servings
         const newServings = this.servings + (type === 'dec' ? -1 : 1);
-        console.log(newServings);
 
         //Ingredients
         this.ingredients.forEach(ing => {
