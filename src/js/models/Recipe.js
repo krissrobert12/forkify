@@ -13,13 +13,6 @@ export default class Recipe {
             this.image = res.data.recipe.image_url;
             this.url = res.data.recipe.source_url;
             this.ingredients = res.data.recipe.ingredients;
-
-            /**
-             * DEVELOPMENT 
-             * DONT FORGET TO DELETE
-             */
-            // window.r = this;
-
         } catch(error) {
             console.log(error);
         }

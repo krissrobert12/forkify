@@ -1,4 +1,3 @@
-
 import { elements, elementStrings } from './base';
 
 export const getInput = () => {
