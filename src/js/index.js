@@ -107,8 +107,6 @@ elements.shopping.addEventListener('click', e => {
 });
 
 
- state.likes = new Likes();
- likesView.toggleLikeMenu(state.likes.getNumLikes());
 
 /**
  * Like Controller
@@ -145,6 +143,21 @@ const controlLikes = () => {
     likesView.toggleLikeMenu(state.likes.getNumLikes());
 };
 
+
+
+// Restore likes recipes on the page
+window.addEventListener('load', () => {
+    state.likes = new Likes();
+
+    // Restore likes
+    state.likes.readStorage();
+
+    // Toggle likes button
+    likesView.toggleLikeMenu(state.likes.getNumLikes());
+
+    // Render the existing likes
+    state.likes.likes.forEach(like => likesView.renderLike(like));
+});
 
 
 /**
