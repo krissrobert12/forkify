@@ -1,6 +1,7 @@
 import Search from './models/Search';
 import Recipe from './models/Recipe';
 import List from './models/List';
+import Likes from './models/Likes';
 import * as searchView from './views/searchView';
 import * as recipeView from './views/recipeView';
 import * as listView from './views/listView';
@@ -107,6 +108,38 @@ elements.shopping.addEventListener('click', e => {
 
 
 /**
+ * Like Controller
+ */
+const controlLikes = () => {
+    if (!state.likes) state.likes = new Likes();
+    const currentID = state.recipe.id;
+
+    // User has not likest current recipe yet
+    if(!state.likes.isLiked(currentID)) {
+        // Add like to state
+        const newLike = state.likes.addLike(
+            currentID, 
+            state.recipe.title, 
+            state.recipe.author,
+            state.recipe.image,
+        );
+        // Toggle the like button
+
+        // Add like to ui list
+        console.log(state.likes);
+    } else {
+        // Remove like to state
+        state.likes.deleteLike(currentID);
+
+        // Toggle the like button
+
+        // Remove like to ui list
+    }
+};
+
+
+
+/**
  * Recipe Controller
  */
 
@@ -169,5 +202,7 @@ elements.recipe.addEventListener('click', e => {
 
         controlList();
 
+    } else if (e.target.matches('.recipe__love, .recipe__love *')) {
+        controlLikes();
     }
 });
